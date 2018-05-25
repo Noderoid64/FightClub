@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/bodywhite.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/headwhite.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/legswhite.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dropdownicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dropupicon.png")]
 
 

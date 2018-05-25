@@ -109,5 +109,25 @@
     <Resource Include="Resourse\HeadWhite.png" />
     <Resource Include="Resourse\LegsWhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\BodyBlue.png" />
+    <Resource Include="Resourse\BodyGreen.png" />
+    <Resource Include="Resourse\BodyRed.png" />
+    <Resource Include="Resourse\BodyYellow.png" />
+    <Resource Include="Resourse\HeadBlue.png" />
+    <Resource Include="Resourse\HeadGreen.png" />
+    <Resource Include="Resourse\HeadRed.png" />
+    <Resource Include="Resourse\HeadYellow.png" />
+    <Resource Include="Resourse\LegsBlue.png" />
+    <Resource Include="Resourse\LegsGreen.png" />
+    <Resource Include="Resourse\LegsRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\LegsYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\DropDownIcon.png" />
+    <Resource Include="Resourse\DropUpIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
