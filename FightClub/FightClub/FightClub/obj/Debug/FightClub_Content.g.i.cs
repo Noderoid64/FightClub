@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dropdownicon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dropupicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/clearicon.png")]
 
 

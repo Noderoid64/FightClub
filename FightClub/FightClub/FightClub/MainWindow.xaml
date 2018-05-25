@@ -12,6 +12,7 @@
             <BeginStoryboard>
                 <Storyboard>
                     <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="BodyGrid"  Storyboard.TargetProperty="Height" From="300" To="200" Duration="0:0:0.6"></DoubleAnimation>
+                    <ThicknessAnimation AccelerationRatio="0.7" Storyboard.TargetName="ButtonClear" Storyboard.TargetProperty="Margin" From="0,0,0,-50" To="0,0,0,50" Duration="0:0:0.6"></ThicknessAnimation>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonShowLog" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
@@ -25,6 +26,7 @@
             <BeginStoryboard>
                 <Storyboard >
                     <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="BodyGrid" Storyboard.TargetProperty="Height" From="200" To="300" Duration="0:0:0.6"></DoubleAnimation>
+                    <ThicknessAnimation AccelerationRatio="0.7" Storyboard.TargetName="ButtonClear" Storyboard.TargetProperty="Margin" From="0,0,0,50" To="0,0,0,-50" Duration="0:0:0.6"></ThicknessAnimation>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonShowLog" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
@@ -129,14 +131,17 @@
                 <Button BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
                     <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/ExitIcon.png"/>
                 </Button>
+               
             </StackPanel>
-
+            <Button x:Name="ButtonClear" Margin="0,0,0,-50" VerticalAlignment="Bottom" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/ClearIcon.png"/>
+            </Button>
         </Grid>
         <StackPanel Width="340" Background="#000014" >
             <Grid Height="70">
 
-                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Right" Background="#0f0d5a" Width="160">
-                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="#604C0E" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Right"  Width="160">
+                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Right">
                         <Border Height="40" Width="40">
                             <Border.Background>
                                 <ImageBrush ImageSource="Resourse/AIIcon.png"/>
@@ -144,7 +149,7 @@
                         </Border>
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Computer</TextBlock>
+                        <TextBlock FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Computer</TextBlock>
                         <ProgressBar Value="100" Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
                             <ProgressBar.Foreground>
                                 <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
@@ -155,7 +160,7 @@
                         </ProgressBar>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Background="#0f0d5a" Width="160">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Width="160">
                     <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left">
                         <Border Height="40" Width="40">
                             <Border.Background>
@@ -164,7 +169,7 @@
                         </Border>
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Player</TextBlock>
+                        <TextBlock FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Player</TextBlock>
                         <ProgressBar Value="100"  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
                             <ProgressBar.Foreground>
                                 <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">

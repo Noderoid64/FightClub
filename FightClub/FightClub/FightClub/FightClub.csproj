@@ -129,5 +129,8 @@
     <Resource Include="Resourse\DropDownIcon.png" />
     <Resource Include="Resourse\DropUpIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\ClearIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
