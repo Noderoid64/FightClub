@@ -68,6 +68,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVC\Control\PlayerControl.cs" />
+    <Compile Include="MVC\Interfaces\IMainControl.cs" />
+    <Compile Include="MVC\Interfaces\IMainControlMenu.cs" />
+    <Compile Include="MVC\Interfaces\IMainModel.cs" />
+    <Compile Include="MVC\Interfaces\IMainControlPlayer.cs" />
+    <Compile Include="MVC\Interfaces\IMainView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -131,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourse\ClearIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVC\Model\" />
+    <Folder Include="MVC\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
