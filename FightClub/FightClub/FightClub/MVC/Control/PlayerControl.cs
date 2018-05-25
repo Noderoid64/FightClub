@@ -37,7 +37,7 @@ namespace FightClub
 
         public void NewGameClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
 
         public void SettingsClick(object sender, RoutedEventArgs e)

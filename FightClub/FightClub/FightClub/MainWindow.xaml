@@ -36,6 +36,32 @@
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonNewGameClose">
+            <BeginStoryboard>
+                <Storyboard >
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGame" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGameClose" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="400" To="60" Duration="0:0:0.6"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonNewGame">
+            <BeginStoryboard>
+                <Storyboard >
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGameClose" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGame" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="60" To="400" Duration="0:0:0.6"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
     </Window.Triggers>
     <Window.Resources>
         <Style x:Key="ControlButton" TargetType="Button">
@@ -89,7 +115,27 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-
+        <Style x:Key="SelectGameType" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" From="10,0,10,0" To="10,0,10,10" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" From="10,0,10,10" To="10,0,10,0" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
         <ControlTemplate x:Key="MyButtonTemplate" TargetType="{x:Type ButtonBase}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -120,17 +166,47 @@
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal" >
-        <Grid Width="60" HorizontalAlignment="Left" Background="#00000a">
-            <StackPanel Margin="0,70,0,0">
-                <Button x:Name="ButtonNewGame" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
-                    <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/NewGameIcon.png"/>
-                </Button>
-                <Button x:Name="ButtonSettings" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
-                    <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/SettingsIcon.png"/>
-                </Button>
-                <Button x:Name="ButtonExit" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
-                    <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/ExitIcon.png"/>
-                </Button>
+        <Grid x:Name="MenuGrid" Width="400" HorizontalAlignment="Left" Background="#00000a">
+            <StackPanel Margin="0,48,0,0">
+                
+                <TextBlock Margin="60,0,0,0" Foreground="White" FontFamily="Comic Sans MS" HorizontalAlignment="Center" FontSize="22">New Game</TextBlock>
+                <Grid>
+                    <StackPanel>
+                        <Grid>
+                            <Button Visibility="Collapsed" HorizontalAlignment="Left" x:Name="ButtonNewGame" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                                <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/NewGameIcon.png"/>
+                            </Button>
+                            <Button  HorizontalAlignment="Left" x:Name="ButtonNewGameClose" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                                <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/DropLeftIcon.png"/>
+                            </Button>
+                        </Grid>
+                        
+                        <Button HorizontalAlignment="Left" x:Name="ButtonSettings" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                            <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/SettingsIcon.png"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" x:Name="ButtonExit" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                            <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/ExitIcon.png"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60,10,0,0">
+                        <Button Style="{StaticResource SelectGameType}" BorderThickness="0" Template="{DynamicResource MyButtonTemplate}" Background="{x:Null}" Height="150" Width="150" HorizontalAlignment="Right" Margin="10,0,10,0">
+                            <Border Height="130" Width="130" CornerRadius="30" Background="Transparent" BorderBrush="White" BorderThickness="10">
+                                <Border Height="100" Width="100" CornerRadius="18" Background="White">
+                                    <Image Margin="10" Source="Resourse/UserIcon.png"/>
+                                </Border>
+                            </Border>
+                        </Button>
+                        <Button Style="{StaticResource SelectGameType}" BorderThickness="0" Template="{DynamicResource MyButtonTemplate}" Background="{x:Null}" Height="150" Width="150" HorizontalAlignment="Right" Margin="10,0,10,0">
+                            <Border Height="130" Width="130" CornerRadius="30" Background="Transparent" BorderBrush="White" BorderThickness="10">
+                                <Border Height="100" Width="100" CornerRadius="18" Background="White">
+                                    <Image Margin="10" Source="Resourse/AIIcon.png"/>
+                                </Border>
+                            </Border>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                
+               
                
             </StackPanel>
             <Button x:Name="ButtonClear" Margin="0,0,0,-50" VerticalAlignment="Bottom" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">

@@ -142,5 +142,8 @@
     <Folder Include="MVC\Model\" />
     <Folder Include="MVC\View\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\DropLeftIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

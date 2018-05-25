@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/clearicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/droplefticon.png")]
 
 
