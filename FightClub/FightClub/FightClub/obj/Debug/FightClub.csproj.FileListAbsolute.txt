@@ -1,0 +1,15 @@
+D:\Git\FightClub\FightClub\FightClub\FightClub\bin\Debug\FightClub.exe.config
+D:\Git\FightClub\FightClub\FightClub\FightClub\bin\Debug\FightClub.exe
+D:\Git\FightClub\FightClub\FightClub\FightClub\bin\Debug\FightClub.pdb
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.csprojResolveAssemblyReference.cache
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\MainWindow.g.cs
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\App.g.cs
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub_MarkupCompile.cache
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub_MarkupCompile.lref
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\MainWindow.baml
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.g.resources
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.Properties.Resources.resources
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.csproj.GenerateResource.cache
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.csproj.CoreCompileInputs.cache
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.exe
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\FightClub.pdb
