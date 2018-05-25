@@ -11,7 +11,7 @@
         <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonShowLog">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="BodyGrid"  Storyboard.TargetProperty="Height" From="300" To="200" Duration="0:0:1"></DoubleAnimation>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="BodyGrid"  Storyboard.TargetProperty="Height" From="300" To="200" Duration="0:0:0.6"></DoubleAnimation>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonShowLog" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
@@ -24,7 +24,7 @@
         <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonCloseLog">
             <BeginStoryboard>
                 <Storyboard >
-                    <DoubleAnimation Storyboard.TargetName="BodyGrid" Storyboard.TargetProperty="Height" From="200" To="300" Duration="0:0:1"></DoubleAnimation>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="BodyGrid" Storyboard.TargetProperty="Height" From="200" To="300" Duration="0:0:0.6"></DoubleAnimation>
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonShowLog" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
@@ -87,13 +87,8 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="LogShower" TargetType="Button">
-            <Style.Triggers>
-               
-            </Style.Triggers>
-        </Style>
-        
-            <ControlTemplate x:Key="MyButtonTemplate" TargetType="{x:Type ButtonBase}">
+
+        <ControlTemplate x:Key="MyButtonTemplate" TargetType="{x:Type ButtonBase}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Border>
@@ -105,10 +100,10 @@
                     <Setter Property="Background" TargetName="border" Value="#FFBEE6FD"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
                 </Trigger>-->
-                <Trigger Property="IsPressed" Value="True">
+                <!--<Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
-                </Trigger>
+                </Trigger>-->
                 <Trigger Property="ToggleButton.IsChecked" Value="True">
                     <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
@@ -123,7 +118,7 @@
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal" >
-        <Grid Width="60" HorizontalAlignment="Left" Background="#04040f">
+        <Grid Width="60" HorizontalAlignment="Left" Background="#00000a">
             <StackPanel Margin="0,70,0,0">
                 <Button   BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
                     <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/NewGameIcon.png"/>
@@ -150,11 +145,18 @@
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Computer</TextBlock>
-                        <ProgressBar  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom"></ProgressBar>
+                        <ProgressBar Value="100" Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
+                            <ProgressBar.Foreground>
+                                <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF007810"/>
+                                    <GradientStop Color="#FF459700" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ProgressBar.Foreground>
+                        </ProgressBar>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Background="#0f0d5a" Width="160">
-                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="#604C0E" HorizontalAlignment="Left">
+                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left">
                         <Border Height="40" Width="40">
                             <Border.Background>
                                 <ImageBrush ImageSource="Resourse/UserIcon.png"/>
@@ -163,7 +165,14 @@
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Player</TextBlock>
-                        <ProgressBar  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom"></ProgressBar>
+                        <ProgressBar Value="100"  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
+                            <ProgressBar.Foreground>
+                                <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF007810"/>
+                                    <GradientStop Color="#FF459700" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ProgressBar.Foreground>
+                        </ProgressBar>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -173,7 +182,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                
+
                 <Button Background="{x:Null}" BorderThickness="0" Grid.Row="0" Template="{DynamicResource MyButtonTemplate}">
 
                     <Grid>
@@ -187,27 +196,28 @@
                         <Image Margin="10" Source="Resourse/BodyYellow.png"></Image>
                         <Image Margin="10" Source="Resourse/BodyWhite.png" Style="{StaticResource BodyControl}"></Image>
                     </Grid>
-                    
+
                 </Button>
                 <Button Background="{x:Null}" BorderThickness="0" Grid.Row="2" Template="{DynamicResource MyButtonTemplate}">
                     <Grid>
                         <Image Margin="10" Source="Resourse/LegsYellow.png"></Image>
                         <Image Margin="10" Source="Resourse/LegsWhite.png" Style="{StaticResource BodyControl}"></Image>
                     </Grid>
-                   
+
                 </Button>
-                
+
             </Grid>
             <StackPanel >
-                
-                <Button Style="{StaticResource LogShower}" x:Name="ButtonShowLog" Template="{DynamicResource MyButtonTemplate}" BorderThickness="0" Background="{x:Null}" Height="30" VerticalAlignment="Top">
+
+                <Button  x:Name="ButtonShowLog" Template="{DynamicResource MyButtonTemplate}" BorderThickness="0" Background="{x:Null}" Height="30" VerticalAlignment="Top">
                     <Image Source="Resourse/DropUpIcon.png"/>
                 </Button>
-                <Button Style="{StaticResource LogShower}" x:Name="ButtonCloseLog" Template="{DynamicResource MyButtonTemplate}" BorderThickness="0" Background="{x:Null}" Height="30" VerticalAlignment="Top">
+                <Button  x:Name="ButtonCloseLog" Template="{DynamicResource MyButtonTemplate}" BorderThickness="0" Background="{x:Null}" Height="30" VerticalAlignment="Top">
                     <Image Source="Resourse/DropDownIcon.png"/>
                 </Button>
-                <ListViewItem Background="#1c1500" Height="100">
-                    
+                <ListViewItem BorderThickness="0,2,0,0" BorderBrush="White" Background="#04040f" Height="100">
+
+                    <ListBoxItem Foreground="Green">Game is running</ListBoxItem>
                 </ListViewItem>
             </StackPanel>
         </StackPanel>
