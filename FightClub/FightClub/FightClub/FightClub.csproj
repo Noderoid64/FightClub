@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\Player.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -73,7 +74,11 @@
     <Compile Include="MVC\Interfaces\IMainControlMenu.cs" />
     <Compile Include="MVC\Interfaces\IMainModel.cs" />
     <Compile Include="MVC\Interfaces\IMainControlPlayer.cs" />
+    <Compile Include="MVC\Interfaces\IMainModelMenu.cs" />
+    <Compile Include="MVC\Interfaces\IMainModelPlayer.cs" />
     <Compile Include="MVC\Interfaces\IMainView.cs" />
+    <Compile Include="MVC\Model\ModelMenu.cs" />
+    <Compile Include="MVC\Model\PModelP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,7 +144,6 @@
     <Resource Include="Resourse\ClearIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVC\Model\" />
     <Folder Include="MVC\View\" />
   </ItemGroup>
   <ItemGroup>

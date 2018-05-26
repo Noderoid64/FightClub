@@ -33,7 +33,8 @@ namespace FightClub
             ButtonBody.Click += control.BodyClick;
             ButtonLegs.Click += control.LegsClick;
             ButtonExit.Click += control.ExitClick;
-            ButtonNewGame.Click += control.NewGameClick;
+            ButtonAIGame.Click += control.NewGameAI;
+            ButtonPlayerGame.Click += control.NewGamePlayer;
             ButtonSettings.Click += control.SettingsClick;
             ButtonClear.Click += control.ClearClick;
         }
