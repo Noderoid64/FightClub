@@ -63,6 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\Player.cs" />
+    <Compile Include="Data\UserPlayer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -78,6 +79,8 @@
     <Compile Include="MVC\Interfaces\IMainModelPlayer.cs" />
     <Compile Include="MVC\Interfaces\IMainView.cs" />
     <Compile Include="MVC\Model\ModelMenu.cs" />
+    <Compile Include="MVC\Model\PModelAI.cs" />
+    <Compile Include="MVC\Model\PModelAI_Player.cs" />
     <Compile Include="MVC\Model\PModelP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

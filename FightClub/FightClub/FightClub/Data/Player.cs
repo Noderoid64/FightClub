@@ -10,11 +10,31 @@ namespace FightClub
     {
         protected string Name;
         protected int HP;
-        protected enum Part : int { Head, Body, Legs }
+        public enum Part : int { Head, Body, Legs }
         protected Part Blocked;
 
+        public Player(string name, int hp)
+        {
+            Name = name;
+            HP = hp;            
+        }
 
-        public abstract void GetHit();
-        public abstract void SetBlock();
+        public event EventHandler <PlayersEventArgs> Block;
+        public event EventHandler <PlayersEventArgs> Wound;
+        public event EventHandler <PlayersEventArgs> Death;
+
+        public abstract void GetHit(Part target);
+        public abstract void SetBlock(Part blocked);
+    }
+
+    class PlayersEventArgs : EventArgs
+    {
+        public string Name { get; private set; }
+        public int HP { get; private set; }
+        public PlayersEventArgs(string name, int hp)
+        {
+            Name = name;
+            HP = hp;
+        }
     }
 }

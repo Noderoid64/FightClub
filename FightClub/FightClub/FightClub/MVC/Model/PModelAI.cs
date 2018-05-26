@@ -7,15 +7,15 @@ using System.Windows;
 
 namespace FightClub
 {
-    class PModelP : IMainModel, IMainControlMenu, IMainControlPlayer
+    class PModelAI : IMainModel, IMainControlMenu, IMainControlPlayer
     {
         private IMainView View;
         private IMainModelMenu Menu;
         private IMainModelPlayer Control;
 
         #region Constructors
-        public PModelP() : this(null, new ModelMenu(),null) { }
-        public PModelP(IMainView view, IMainModelMenu menu, IMainModelPlayer control)
+        public PModelAI() : this(null, new ModelMenu(), null) { }
+        public PModelAI(IMainView view, IMainModelMenu menu, IMainModelPlayer control)
         {
             View = view;
             Menu = menu;
@@ -46,7 +46,7 @@ namespace FightClub
 
         public void ExitClick(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            throw new NotImplementedException();
         }
 
         public void NewGameAI(object sender, RoutedEventArgs e)
