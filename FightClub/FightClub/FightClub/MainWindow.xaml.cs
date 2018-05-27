@@ -24,7 +24,10 @@ namespace FightClub
         public MainWindow()
         {
             InitializeComponent();
-            SetEvents(new PlayerControl());
+
+            IMainControl Control = new PlayerControl();
+            SetEvents(Control);
+            SendWindow(Control);
             
         }
         private void SetEvents(IMainControl control)
@@ -37,6 +40,10 @@ namespace FightClub
             ButtonPlayerGame.Click += control.NewGamePlayer;
             ButtonSettings.Click += control.SettingsClick;
             ButtonClear.Click += control.ClearClick;
+        }
+        private void SendWindow(IMainControl control)
+        {
+            control.SendWindow(this);
         }
         
     }

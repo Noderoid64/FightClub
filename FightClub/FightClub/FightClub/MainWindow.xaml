@@ -296,10 +296,10 @@
                 <Button Visibility="Collapsed"  x:Name="ButtonCloseLog" Template="{DynamicResource MyButtonTemplate}" BorderThickness="0" Background="{x:Null}" Height="30" VerticalAlignment="Top">
                     <Image Source="Resourse/DropDownIcon.png"/>
                 </Button>
-                <ListViewItem BorderThickness="0,2,0,0" BorderBrush="White" Background="#04040f" Height="100">
+                <ListBox Name="LogBox" BorderThickness="0,2,0,0" BorderBrush="White" Foreground="Green" Background="#04040f" Height="100">
 
                     <ListBoxItem Foreground="Green">Game is running</ListBoxItem>
-                </ListViewItem>
+                </ListBox>
             </StackPanel>
         </StackPanel>
     </StackPanel>

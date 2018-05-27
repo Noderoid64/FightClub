@@ -11,9 +11,8 @@ namespace FightClub
     {
         public IMainModelMenu ClearClick()
         {
-            MessageBox.Show(Arena.FirstPlayer(new UserPlayer(),new UserPlayer()).ToString());
-            return this;
-           // throw new NotImplementedException();
+            
+            throw new NotImplementedException();
         }
 
         public IMainModelMenu ExitClick()

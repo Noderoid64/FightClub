@@ -26,15 +26,15 @@ namespace FightClub
         #region Control
         public void HeadClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.HeadClick();
+            Control.HeadClick();
         }
         public void BodyClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.BodyClick();
+            Control.BodyClick();
         }
         public void LegsClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.LegsClick();
+            Control.LegsClick();
         }
         #endregion
 
@@ -63,6 +63,13 @@ namespace FightClub
         {
             throw new NotImplementedException();
         }
+
         #endregion
+
+        public void SendWindow(Window w)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

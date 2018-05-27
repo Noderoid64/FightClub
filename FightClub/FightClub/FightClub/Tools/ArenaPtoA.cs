@@ -9,12 +9,10 @@ namespace FightClub
 {
     using System.Windows;
     using Part = Player.Part;
-    class ArenaPtoA : IMainControlPlayer
+    class ArenaPtoA : IMainModelPlayer, IArena
     {
         Player HumanPlayer;
         Player AI;
-        int HumanDef;
-
         Func<Part,Player,bool> SetPart;
         Action<Part> SetTo;
 
@@ -24,12 +22,16 @@ namespace FightClub
             AI = ai;
 
             SetPart = SetBlockPart;
-            if (firstPlayer == 0)
-                SetTo = SetToPlayer;
+            if (firstPlayer >= 0 && firstPlayer < 2)
+                if (firstPlayer == 0)
+                    SetTo = SetToPlayer;
+                else
+                    SetTo = SetToAI;
             else
-                SetTo = SetToAI;
+                throw new Exception("Class: ArenaPtoA\nfirstPlayer must be between 0 and 1");
             
         }
+
         private void SetToPlayer(Part p)
         {
             if (SetPart(p, HumanPlayer))
@@ -42,33 +44,38 @@ namespace FightClub
         }
         private bool SetBlockPart(Part part, Player player)
         {
+            player.SetBlock(part);
             SetPart = SetHitPart;
             return false;
         }
         private bool SetHitPart(Part part, Player player)
         {
-            
+            player.GetHit(part);
             SetPart = SetBlockPart;
             return true;
         }
 
-
+        public List<Player> GetPlayers()
+        {
+            return new List<Player>(new Player[] {HumanPlayer,AI });
+        }
         public static int FirstPlayer(params Player[] t)
         {
             return (new Random().Next(0, t.Length));
         }
+
         #region IModelPlayer
-        public void BodyClick(object sender, RoutedEventArgs e)
+        public void BodyClick()
         {
             SetTo(Part.Body);
         }
 
-        public void HeadClick(object sender, RoutedEventArgs e)
+        public void HeadClick()
         {
             SetTo(Part.Head);
         }
 
-        public void LegsClick(object sender, RoutedEventArgs e)
+        public void LegsClick()
         {
             SetTo(Part.Legs);
         }

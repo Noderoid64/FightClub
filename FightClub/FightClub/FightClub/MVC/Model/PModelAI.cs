@@ -14,27 +14,40 @@ namespace FightClub
         private IMainModelPlayer Control;
 
         #region Constructors
-        public PModelAI() : this(null, new ModelMenu(), null) { }
+        public PModelAI() : this(new MainView(), new ModelMenu(),new ArenaPtoA(new UserPlayer(), new UserPlayer(),0))
+        {
+            
+        }
         public PModelAI(IMainView view, IMainModelMenu menu, IMainModelPlayer control)
         {
             View = view;
             Menu = menu;
             Control = control;
+            if(control is IArena)
+            {
+                ((IArena)control).GetPlayers()[0].Block += SendBlockedToLog;
+                ((IArena)control).GetPlayers()[0].Wound += SendWoundToLog;
+                ((IArena)control).GetPlayers()[0].Death += SendDeathToLog;
+                ((IArena)control).GetPlayers()[1].Block += SendBlockedToLog;
+                ((IArena)control).GetPlayers()[1].Wound += SendWoundToLog;
+                ((IArena)control).GetPlayers()[1].Death += SendDeathToLog;
+            }
         }
         #endregion
 
         #region Control
         public void HeadClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.HeadClick();
+            Control.HeadClick();
+            View.Log("it was a headHit");
         }
         public void BodyClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.BodyClick();
+            Control.BodyClick();
         }
         public void LegsClick(object sender, RoutedEventArgs e)
         {
-            Control = Control.LegsClick();
+            Control.LegsClick();
         }
         #endregion
 
@@ -64,5 +77,25 @@ namespace FightClub
             throw new NotImplementedException();
         }
         #endregion
+
+        #region Events
+        private void SendBlockedToLog(object sender,PlayersEventArgs e)
+        {
+            View.Log(e.Name + " Blocked " + e.HP);
+        }
+        private void SendWoundToLog(object sender, PlayersEventArgs e)
+        {
+            View.Log(e.Name + " Wound " + e.HP);
+        }
+        private void SendDeathToLog(object sender, PlayersEventArgs e)
+        {
+            View.Log(e.Name + " Death " + e.HP);
+        }
+        #endregion
+
+        public void SendWindow(Window wind)
+        {
+            View.SendWindow(wind);
+        }
     }
 }

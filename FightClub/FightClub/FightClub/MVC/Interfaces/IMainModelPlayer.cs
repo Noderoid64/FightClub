@@ -2,8 +2,8 @@
 {
     interface IMainModelPlayer
     {
-        IMainModelPlayer BodyClick();
-        IMainModelPlayer HeadClick();
-        IMainModelPlayer LegsClick();
+        void BodyClick();
+        void HeadClick();
+        void LegsClick();
     }
 }

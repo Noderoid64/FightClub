@@ -54,8 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Tools\Arena.cs" />
+    <Compile Include="MVC\Control\PlayerControl.cs" />
+    <Compile Include="MVC\Interfaces\IMVCComponent.cs" />
+    <Compile Include="MVC\View\MainView.cs" />
+    <Compile Include="Tools\ArenaPtoA.cs" />
     <Compile Include="Tools\IArena.cs" />
+    <Compile Include="Tools\Loger.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -146,10 +150,7 @@
   <ItemGroup>
     <Resource Include="Resourse\ClearIcon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVC\Control\" />
-    <Folder Include="MVC\View\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resourse\DropLeftIcon.png" />
   </ItemGroup>

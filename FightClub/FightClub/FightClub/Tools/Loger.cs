@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClub
+namespace FightClub.Tools
 {
-    interface IArena
+    static class Loger
     {
-        List<Player> GetPlayers();
-        
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    interface IMainView
+    interface IMainView : IMVCComponent
     {
+        void Log(string message);
     }
 }

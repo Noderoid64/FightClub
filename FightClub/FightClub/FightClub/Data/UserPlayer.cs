@@ -20,12 +20,25 @@ namespace FightClub
 
         public override void GetHit(Part blocked)
         {
-            throw new NotImplementedException();
+            if (Blocked == blocked)
+                CallBlock(new PlayersEventArgs(Name, HP));
+            else
+            {
+                HP -= damage;
+                if (HP > 0)
+                    CallWound(new PlayersEventArgs(Name, HP));
+                else
+                {
+                    HP = 0;
+                    CallDeath(new PlayersEventArgs(Name, HP));
+                }
+                    
+            }
         }
 
         public override void SetBlock(Part target)
         {
-            throw new NotImplementedException();
+            Blocked = target;
         }
     }
 }
