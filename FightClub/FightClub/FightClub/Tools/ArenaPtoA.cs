@@ -16,10 +16,12 @@ namespace FightClub
         Func<Part,Player,bool> SetPart;
         Action<Part> SetTo;
 
-        public ArenaPtoA(Player humanPlayer, Player ai, int firstPlayer)
+        public IMainView view { set; private get; }
+
+        public ArenaPtoA( Player humanPlayer, Player ai, int firstPlayer)
         {
             HumanPlayer = humanPlayer;
-            AI = ai;
+            AI = ai;           
 
             SetPart = SetBlockPart;
             if (firstPlayer >= 0 && firstPlayer < 2)
@@ -34,24 +36,36 @@ namespace FightClub
 
         private void SetToPlayer(Part p)
         {
+            view.PickOutLeftPlayer();
             if (SetPart(p, HumanPlayer))
+            {
                 SetTo = SetToAI;
+                view.SetLeftLife(HumanPlayer.HP);
+            }
+            else
+                view.SetRightLife(AI.HP);
+            
+           
         }
         private void SetToAI(Part p)
         {
+            view.PickOutRightPlayer();
             if (SetPart(p, AI))
                 SetTo = SetToPlayer;
+            
         }
         private bool SetBlockPart(Part part, Player player)
         {
             player.SetBlock(part);
             SetPart = SetHitPart;
+            view.SetPhaseAttack();
             return false;
         }
         private bool SetHitPart(Part part, Player player)
         {
             player.GetHit(part);
-            SetPart = SetBlockPart;
+            SetPart = SetBlockPart;            
+            view.SetPhaseDefence();
             return true;
         }
 

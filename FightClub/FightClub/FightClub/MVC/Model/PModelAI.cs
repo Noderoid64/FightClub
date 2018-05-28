@@ -13,8 +13,9 @@ namespace FightClub
         private IMainModelMenu Menu;
         private IMainModelPlayer Control;
 
+        
         #region Constructors
-        public PModelAI() : this(new MainView(), new ModelMenu(),new ArenaPtoA(new UserPlayer(), new UserPlayer(),0))
+        public PModelAI() : this(new MainView(), new ModelMenu(),new ArenaPtoA(new UserPlayer("Misha",100), new UserPlayer("Dima",120),0))
         {
             
         }
@@ -23,6 +24,7 @@ namespace FightClub
             View = view;
             Menu = menu;
             Control = control;
+
             if(control is IArena)
             {
                 ((IArena)control).GetPlayers()[0].Block += SendBlockedToLog;
@@ -32,6 +34,8 @@ namespace FightClub
                 ((IArena)control).GetPlayers()[1].Wound += SendWoundToLog;
                 ((IArena)control).GetPlayers()[1].Death += SendDeathToLog;
             }
+            Menu.view = View;
+            Control.view = View;            
         }
         #endregion
 
@@ -39,7 +43,6 @@ namespace FightClub
         public void HeadClick(object sender, RoutedEventArgs e)
         {
             Control.HeadClick();
-            View.Log("it was a headHit");
         }
         public void BodyClick(object sender, RoutedEventArgs e)
         {
@@ -59,7 +62,7 @@ namespace FightClub
 
         public void ExitClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Menu.ExitClick();
         }
 
         public void NewGameAI(object sender, RoutedEventArgs e)

@@ -10,12 +10,11 @@ namespace FightClub
     class PlayerControl : IMainControl
     {
         private IMainModel Model;
+        private IMainView View;
 
         public PlayerControl() : this(new PModelAI())
         {
-            //UserPlayer u1 = new UserPlayer("misha",100);
-            //UserPlayer u2 = new UserPlayer();
-            //PModelAI model = new PModelAI(new MainView(),new ModelMenu(),new ArenaPtoA(u1,u2,0));
+
         }
         public PlayerControl(IMainModel model)
         {
@@ -25,7 +24,7 @@ namespace FightClub
         #region ControlMenu
         public void ClearClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Model.ClearClick(sender, e);
         }
         public void ExitClick(object sender, RoutedEventArgs e)
         {
@@ -33,11 +32,11 @@ namespace FightClub
         }
         public void NewGameAI(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Model.NewGameAI(sender,e);
         }
         public void NewGamePlayer(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Model.NewGamePlayer(sender,e);
         }
         public void SettingsClick(object sender, RoutedEventArgs e)
         {

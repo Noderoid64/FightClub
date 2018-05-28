@@ -150,9 +150,14 @@
   <ItemGroup>
     <Resource Include="Resourse\ClearIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resourse\DefenceIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourse\DropLeftIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resourse\AttackIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
