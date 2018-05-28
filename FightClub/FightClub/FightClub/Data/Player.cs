@@ -9,8 +9,8 @@ namespace FightClub
     abstract class Player
     {
         protected const int damage = 20;
-        protected string Name;
-        protected int HP;
+        public string Name { get; protected set; }
+        public int HP { get; protected set; }
         public enum Part { Head, Body, Legs }
         protected Part Blocked;
 
