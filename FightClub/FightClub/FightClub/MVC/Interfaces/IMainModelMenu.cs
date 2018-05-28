@@ -2,10 +2,11 @@
 {
     interface IMainModelMenu
     {
-        IMainModelMenu ClearClick();
-        IMainModelMenu ExitClick();
-        IMainModelMenu NewGameAI();
-        IMainModelMenu NewGamePlayer();
-        IMainModelMenu SettingsClick();
+        IMainView view { set; }
+        void ClearClick();
+        void ExitClick();
+        void NewGameAI();
+        void NewGamePlayer();
+        void SettingsClick();
     }
 }
