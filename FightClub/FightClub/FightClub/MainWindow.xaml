@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FightClub"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400" WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="400" Width="450" WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonShowLog">
@@ -45,7 +45,7 @@
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGameClose" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
-                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="400" To="60" Duration="0:0:0.6"></DoubleAnimation>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="450" To="60" Duration="0:0:0.6"></DoubleAnimation>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -58,7 +58,7 @@
                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGame" Storyboard.TargetProperty="Visibility">
                         <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
                     </ObjectAnimationUsingKeyFrames>
-                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="60" To="400" Duration="0:0:0.6"></DoubleAnimation>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="60" To="450" Duration="0:0:0.6"></DoubleAnimation>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -136,6 +136,7 @@
             </Style.Triggers>
             
         </Style>
+        
         <ControlTemplate x:Key="MyButtonTemplate" TargetType="{x:Type ButtonBase}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -166,7 +167,7 @@
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal" >
-        <Grid x:Name="MenuGrid" Width="400" HorizontalAlignment="Left" Background="#00000a">
+        <Grid x:Name="MenuGrid" Width="60" HorizontalAlignment="Left" Background="#00000a">
             <StackPanel Margin="0,48,0,0">
                 
                 <TextBlock Margin="60,0,0,0" Foreground="White" FontFamily="Comic Sans MS" HorizontalAlignment="Center" FontSize="22">New Game</TextBlock>
@@ -209,15 +210,15 @@
                
                
             </StackPanel>
-            <Button x:Name="ButtonClear" Margin="0,0,0,-50" VerticalAlignment="Bottom" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
+            <Button x:Name="ButtonClear" Margin="0,0,0,-50" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="0" Background="{x:Null}" Height="60" Template="{DynamicResource MyButtonTemplate}">
                 <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/ClearIcon.png"/>
             </Button>
         </Grid>
-        <StackPanel Width="340" Background="#000014" >
+        <StackPanel Width="390" Background="#000014" >
             <Grid Height="70">
-
+                <Image x:Name="PicPhase" Height="50" Width="50" Source="Resourse/AttackIcon.png"/>
                 <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Right"  Width="160">
-                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Right">
+                    <Border x:Name="RightPlayerBorder" Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="3" BorderBrush="Black" HorizontalAlignment="Right">
                         <Border Height="40" Width="40">
                             <Border.Background>
                                 <ImageBrush ImageSource="Resourse/AIIcon.png"/>
@@ -225,19 +226,23 @@
                         </Border>
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
-                        <TextBlock FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Computer</TextBlock>
-                        <ProgressBar Value="100" Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
-                            <ProgressBar.Foreground>
-                                <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
-                                    <GradientStop Color="#FF007810"/>
-                                    <GradientStop Color="#FF459700" Offset="1"/>
-                                </LinearGradientBrush>
-                            </ProgressBar.Foreground>
-                        </ProgressBar>
+                        <TextBlock x:Name="NameRight" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Computer</TextBlock>
+                        <Grid >
+                            <ProgressBar Background="Red" x:Name="ProgressRight" Value="100" Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
+                                <ProgressBar.Foreground>
+                                    <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
+                                        <GradientStop Color="#FF007810"/>
+                                        <GradientStop Color="#FF459700" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </ProgressBar.Foreground>
+                            </ProgressBar>
+                            <Label x:Name="RightLifeLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Comic Sans MS" FontSize="15" Content="100"></Label>
+                        </Grid>
+                        
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Width="160">
-                    <Border Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left">
+                    <Border x:Name="LeftPlayerBorder" Height="70" Width="70" CornerRadius="50" Background="White" BorderThickness="3" BorderBrush="Black" HorizontalAlignment="Left">
                         <Border Height="40" Width="40">
                             <Border.Background>
                                 <ImageBrush ImageSource="Resourse/UserIcon.png"/>
@@ -245,15 +250,19 @@
                         </Border>
                     </Border>
                     <StackPanel VerticalAlignment="Bottom">
-                        <TextBlock FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Player</TextBlock>
-                        <ProgressBar Value="100"  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
-                            <ProgressBar.Foreground>
-                                <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
-                                    <GradientStop Color="#FF007810"/>
-                                    <GradientStop Color="#FF459700" Offset="1"/>
-                                </LinearGradientBrush>
-                            </ProgressBar.Foreground>
-                        </ProgressBar>
+                        <TextBlock x:Name="NameLeft" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,10" FontSize="18" Foreground="White" Width="80">Player</TextBlock>
+                        <Grid>
+                            <ProgressBar Background="Red"  x:Name="ProgressLeft" Value="100"  Width="80" Height="20" Margin="5,0,0,5" VerticalAlignment="Bottom">
+                                <ProgressBar.Foreground>
+                                    <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
+                                        <GradientStop Color="#FF007810"/>
+                                        <GradientStop Color="#FF459700" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </ProgressBar.Foreground>
+                            </ProgressBar>
+                            <Label x:Name="LeftLifeLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Comic Sans MS" FontSize="15" Content="100"></Label>
+                        </Grid>
+                       
                     </StackPanel>
                 </StackPanel>
             </Grid>
