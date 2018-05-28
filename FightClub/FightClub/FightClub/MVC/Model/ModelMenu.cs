@@ -9,28 +9,31 @@ namespace FightClub
 {
     class ModelMenu : IMainModelMenu
     {
-        public IMainModelMenu ClearClick()
+        public IMainView view { set; private get; }
+
+        public void ClearClick()
         {
-            
+
             throw new NotImplementedException();
         }
 
-        public IMainModelMenu ExitClick()
+        public void ExitClick()
         {
-            throw new NotImplementedException();
+            Environment.Exit(0);
+
         }
 
-        public IMainModelMenu NewGameAI()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IMainModelMenu NewGamePlayer()
+        public void NewGameAI()
         {
             throw new NotImplementedException();
         }
 
-        public IMainModelMenu SettingsClick()
+        public void NewGamePlayer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SettingsClick()
         {
             throw new NotImplementedException();
         }
