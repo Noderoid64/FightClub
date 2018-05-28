@@ -24,11 +24,15 @@ namespace FightClub
         public MainWindow()
         {
             InitializeComponent();
+         
+            StartNewGame(new PlayerControl());
+        }
 
-            IMainControl Control = new PlayerControl();
-            SetEvents(Control);
-            SendWindow(Control);
-            
+        internal void StartNewGame(IMainControl control)
+        {
+
+            SetEvents(control);
+            SendWindow(control);
         }
         private void SetEvents(IMainControl control)
         {
