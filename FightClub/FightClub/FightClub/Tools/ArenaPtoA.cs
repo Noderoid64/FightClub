@@ -64,6 +64,7 @@ namespace FightClub
         {
             HumanPlayer.SetBlock(part);
             HumanPlayer.GetHit(Bot.MakeAttackDecision());
+            View.SetLeftLife(HumanPlayer.HP);
             SetPart = SetHitPart;
             view.SetPhaseAttack();
             return false;
@@ -72,6 +73,7 @@ namespace FightClub
         {
             AI.SetBlock(Bot.MakeDefDecision());
             AI.GetHit(part);
+            View.SetRightLife(AI.HP);
             SetPart = SetBlockPart;
             view.SetPhaseDefence();
             return true;
