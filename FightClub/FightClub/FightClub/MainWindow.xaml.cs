@@ -73,7 +73,7 @@ namespace FightClub
         private void StartGamePlayer(object sender, EventArgs e)
         {
             DisableEvents(Control);
-            StartNewGame(new PlayerControl(new PModelP()));
+            StartNewGame(new PlayerControl(new PModelP(this)));
         }
         
     }

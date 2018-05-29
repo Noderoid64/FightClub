@@ -54,10 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\IBot.cs" />
+    <Compile Include="Data\RandomBot.cs" />
     <Compile Include="MVC\Control\PlayerControl.cs" />
     <Compile Include="MVC\Interfaces\IMVCComponent.cs" />
     <Compile Include="MVC\View\MainView.cs" />
     <Compile Include="Tools\ArenaPtoA.cs" />
+    <Compile Include="Tools\ArenaPtoP.cs" />
     <Compile Include="Tools\IArena.cs" />
     <Compile Include="Tools\Loger.cs" />
     <Page Include="MainWindow.xaml">

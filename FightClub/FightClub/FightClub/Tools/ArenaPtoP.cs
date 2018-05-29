@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace FightClub
 {
     using Part = Player.Part;
-    class ArenaPtoA : IMainModelPlayer, IArena
+    class ArenaPtoP : IMainModelPlayer, IArena
     {
         Player HumanPlayer;
         Player AI;
-        Func<Part, bool> SetPart;
+        Func<Part, Player, bool> SetPart;
+        Action<Part> SetTo;
 
-        private IBot Bot;
         private IMainView View;
         public IMainView view
         {
@@ -32,9 +32,9 @@ namespace FightClub
             }
         }
 
-        public ArenaPtoA(Player humanPlayer, Player ai, int firstPlayer, IBot bot)
+        public ArenaPtoP(Player humanPlayer, Player ai, int firstPlayer)
         {
-            Bot = bot;
+
             HumanPlayer = humanPlayer;
             AI = ai;
 
@@ -44,7 +44,7 @@ namespace FightClub
             SubscribeEvents(AI);
 
         }
-        ~ArenaPtoA()
+        ~ArenaPtoP()
         {
             DiscribeEvents(HumanPlayer);
             DiscribeEvents(AI);
@@ -52,26 +52,44 @@ namespace FightClub
         private void SetStartPlayer(int firstPlayer)
         {
             if (firstPlayer >= 0 && firstPlayer < 2)
-            {
-                if (firstPlayer != 0)
-                    HumanPlayer.GetHit(Bot.MakeAttackDecision());
-            }
+                if (firstPlayer == 0)
+                    SetTo = SetToPlayer;
+                else
+                    SetTo = SetToAI;
             else
                 throw new Exception("Class: ArenaPtoA\nfirstPlayer must be between 0 and 1");
         }
 
-        private bool SetBlockPart(Part part)
+        private void SetToPlayer(Part p)
         {
-            HumanPlayer.SetBlock(part);
-            HumanPlayer.GetHit(Bot.MakeAttackDecision());
+            view.PickOutLeftPlayer();
+            if (SetPart(p, HumanPlayer))
+            {
+                SetTo = SetToAI;
+                view.SetLeftLife(HumanPlayer.HP);
+            }
+            else
+                view.SetRightLife(AI.HP);
+
+
+        }
+        private void SetToAI(Part p)
+        {
+            view.PickOutRightPlayer();
+            if (SetPart(p, AI))
+                SetTo = SetToPlayer;
+
+        }
+        private bool SetBlockPart(Part part, Player player)
+        {
+            player.SetBlock(part);
             SetPart = SetHitPart;
             view.SetPhaseAttack();
             return false;
         }
-        private bool SetHitPart(Part part)
+        private bool SetHitPart(Part part, Player player)
         {
-            AI.SetBlock(Bot.MakeDefDecision());
-            AI.GetHit(part);
+            player.GetHit(part);
             SetPart = SetBlockPart;
             view.SetPhaseDefence();
             return true;
@@ -115,17 +133,17 @@ namespace FightClub
         #region IModelPlayer
         public void BodyClick()
         {
-            SetPart(Part.Body);
+            SetTo(Part.Body);
         }
 
         public void HeadClick()
         {
-            SetPart(Part.Head);
+            SetTo(Part.Head);
         }
 
         public void LegsClick()
         {
-            SetPart(Part.Legs);
+            SetTo(Part.Legs);
         }
         #endregion
     }

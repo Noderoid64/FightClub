@@ -12,10 +12,11 @@ namespace FightClub
         private IMainView View;
         private IMainModelMenu Menu;
         private IMainModelPlayer Control;
+        private IBot Bot;
 
         
         #region Constructors
-        public PModelAI(Window w) : this(new MainView(w), new ModelMenu(),new ArenaPtoA(new UserPlayer("Misha",100), new UserPlayer("Dima",120),0))
+        public PModelAI(Window w) : this(new MainView(w), new ModelMenu(),new ArenaPtoA(new UserPlayer("Misha",100), new UserPlayer("Dima",120),0,new RandomBot()))
         {
             
         }
@@ -32,10 +33,13 @@ namespace FightClub
         }
         #endregion
 
+
+
         #region Control
         public void HeadClick(object sender, RoutedEventArgs e)
         {
             Control.HeadClick();
+
         }
         public void BodyClick(object sender, RoutedEventArgs e)
         {
