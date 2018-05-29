@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    using System.Windows;
     using Part = Player.Part;
     class ArenaPtoA : IMainModelPlayer, IArena
     {
@@ -41,10 +40,15 @@ namespace FightClub
 
             SetPart = SetBlockPart;  // Select start phase
             SetStartPlayer(firstPlayer);
-           
+            SubscribeEvents(HumanPlayer);
+            SubscribeEvents(AI);
             
         }
-
+        ~ArenaPtoA()
+        {
+            DiscribeEvents(HumanPlayer);
+            DiscribeEvents(AI);
+        }
         private void SetStartPlayer(int firstPlayer)
         {
             if (firstPlayer >= 0 && firstPlayer < 2)
@@ -95,10 +99,36 @@ namespace FightClub
         {
             return new List<Player>(new Player[] {HumanPlayer,AI });
         }
-        public static int FirstPlayer(params Player[] t)
+
+        private void SubscribeEvents(Player P)
         {
-            return (new Random().Next(0, t.Length));
+            P.Block += Block;
+            P.Wound += Wound;
+            P.Death += Death;
         }
+        private void DiscribeEvents(Player P)
+        {
+            P.Block -= Block;
+            P.Wound -= Wound;
+            P.Death -= Death;
+        }
+
+        private void Block(object sende, PlayersEventArgs e)
+        {
+            Loger log = new DebugLoger(new UILoger(view));
+            log.Write(DateTime.Now + " " + e.Name + ": " + " blocked "+e.HP);
+        }
+        private void Wound(object sende, PlayersEventArgs e)
+        {
+            Loger log = new DebugLoger(new UILoger(view));
+            log.Write(DateTime.Now + " " + e.Name + ": " + " wound " + e.HP);
+        }
+        private void Death(object sende, PlayersEventArgs e)
+        {
+            Loger log = new DebugLoger(new UILoger(view));
+            log.Write(DateTime.Now + " " + e.Name + ": " + " death " + e.HP);
+        }
+
 
         #region IModelPlayer
         public void BodyClick()

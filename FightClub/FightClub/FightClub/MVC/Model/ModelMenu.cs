@@ -14,7 +14,7 @@ namespace FightClub
         public void ClearClick()
         {
 
-            throw new NotImplementedException();
+            view.CleanLog();
         }
 
         public void ExitClick()

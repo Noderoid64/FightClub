@@ -30,7 +30,7 @@ namespace FightClub
     class UILoger : Loger
     {
         IMainView View;
-        public UILoger(IMainView view, Loger log = null) : base(log) { }
+        public UILoger(IMainView view, Loger log = null) : base(log) { View = view; }
 
         public override void Write(string message)
         {

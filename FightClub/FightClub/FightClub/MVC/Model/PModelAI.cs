@@ -50,7 +50,7 @@ namespace FightClub
         #region Menu
         public void ClearClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Menu.ClearClick();
         }
 
         public void ExitClick(object sender, RoutedEventArgs e)
