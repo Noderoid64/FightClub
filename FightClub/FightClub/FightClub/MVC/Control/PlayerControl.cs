@@ -10,9 +10,8 @@ namespace FightClub
     class PlayerControl : IMainControl
     {
         private IMainModel Model;
-        private IMainView View;
 
-        public PlayerControl() : this(new PModelAI())
+        public PlayerControl(Window w) : this(new PModelAI(w))
         {
 
         }
@@ -59,10 +58,6 @@ namespace FightClub
         }
         #endregion
 
-        public void SendWindow(Window wind)
-        {
-            Model.SendWindow(wind);
-        }
        
     }
 }

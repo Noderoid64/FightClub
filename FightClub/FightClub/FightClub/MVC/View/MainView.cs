@@ -15,16 +15,24 @@ namespace FightClub
     {
         private MainWindow Window;
 
-
+        public MainView(Window w)
+        {
+            if (w is MainWindow)
+                Window = (MainWindow)w;
+            else
+                throw new Exception();
+        }
 
         public void SetLeftMaxLife(int i)
         {
             Window.ProgressLeft.Maximum = i;
+            Window.ProgressLeft.Value = i;
             Window.LeftLifeLabel.Content = i;
         }
         public void SetRightMaxLife(int i)
         {
             Window.ProgressRight.Maximum = i;
+            Window.ProgressRight.Value = i;
             Window.RightLifeLabel.Content = i;
 
         }
@@ -76,10 +84,5 @@ namespace FightClub
             Window.LogBox.Items.Clear();
         }
 
-        public void SendWindow(Window w)
-        {
-            if (w is MainWindow)
-                Window = (MainWindow)w;
-        }
     }
 }

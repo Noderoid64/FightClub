@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    interface IMainControl : IMainControlPlayer, IMainControlMenu,IMVCComponent
+    interface IMainControl : IMainControlPlayer, IMainControlMenu
     {
         
 

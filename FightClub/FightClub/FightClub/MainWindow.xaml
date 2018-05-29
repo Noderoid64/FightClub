@@ -62,6 +62,32 @@
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonAIGame">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGame" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGameClose" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="450" To="60" Duration="0:0:0.6"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonPlayerGame">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGame" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonNewGameClose" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}"></DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                    <DoubleAnimation AccelerationRatio="0.7" Storyboard.TargetName="MenuGrid" Storyboard.TargetProperty="Width" From="450" To="60" Duration="0:0:0.6"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
     </Window.Triggers>
     <Window.Resources>
         <Style x:Key="ControlButton" TargetType="Button">
@@ -167,17 +193,17 @@
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal" >
-        <Grid x:Name="MenuGrid" Width="60" HorizontalAlignment="Left" Background="#00000a">
+        <Grid x:Name="MenuGrid" Width="450" HorizontalAlignment="Left" Background="#00000a">
             <StackPanel Margin="0,48,0,0">
                 
                 <TextBlock Margin="60,0,0,0" Foreground="White" FontFamily="Comic Sans MS" HorizontalAlignment="Center" FontSize="22">New Game</TextBlock>
                 <Grid>
                     <StackPanel>
                         <Grid>
-                            <Button Visibility="Collapsed" HorizontalAlignment="Left" x:Name="ButtonNewGame" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                            <Button Visibility="Hidden" HorizontalAlignment="Left" x:Name="ButtonNewGame" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
                                 <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/NewGameIcon.png"/>
                             </Button>
-                            <Button  HorizontalAlignment="Left" x:Name="ButtonNewGameClose" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
+                            <Button Visibility="Collapsed" HorizontalAlignment="Left" x:Name="ButtonNewGameClose" BorderThickness="0" Background="Transparent" Height="60" Template="{DynamicResource MyButtonTemplate}">
                                 <Image Style="{StaticResource ControlImage}" Margin="10" Source="Resourse/DropLeftIcon.png"/>
                             </Button>
                         </Grid>

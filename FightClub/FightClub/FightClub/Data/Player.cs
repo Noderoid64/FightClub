@@ -27,14 +27,17 @@ namespace FightClub
 
         public void CallBlock(PlayersEventArgs arg)
         {
+            if(Block != null)
             Block.Invoke(null,arg);
         }
         public void CallWound(PlayersEventArgs arg)
         {
+            if(Wound !=null)
             Wound.Invoke(null, arg);
         }
         public void CallDeath(PlayersEventArgs arg)
         {
+            if(Death != null)
             Death.Invoke(null, arg);
         }
 

@@ -15,7 +15,7 @@ namespace FightClub
 
         
         #region Constructors
-        public PModelAI() : this(new MainView(), new ModelMenu(),new ArenaPtoA(new UserPlayer("Misha",100), new UserPlayer("Dima",120),0))
+        public PModelAI(Window w) : this(new MainView(w), new ModelMenu(),new ArenaPtoA(new UserPlayer("Misha",100), new UserPlayer("Dima",120),0))
         {
             
         }
@@ -25,17 +25,10 @@ namespace FightClub
             Menu = menu;
             Control = control;
 
-            if(control is IArena)
-            {
-                ((IArena)control).GetPlayers()[0].Block += SendBlockedToLog;
-                ((IArena)control).GetPlayers()[0].Wound += SendWoundToLog;
-                ((IArena)control).GetPlayers()[0].Death += SendDeathToLog;
-                ((IArena)control).GetPlayers()[1].Block += SendBlockedToLog;
-                ((IArena)control).GetPlayers()[1].Wound += SendWoundToLog;
-                ((IArena)control).GetPlayers()[1].Death += SendDeathToLog;
-            }
+           
             Menu.view = View;
-            Control.view = View;            
+            Control.view = View;       
+                        
         }
         #endregion
 
@@ -67,12 +60,12 @@ namespace FightClub
 
         public void NewGameAI(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void NewGamePlayer(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void SettingsClick(object sender, RoutedEventArgs e)
@@ -82,6 +75,19 @@ namespace FightClub
         #endregion
 
         #region Events
+
+        private void EventSubscription(IMainModelPlayer control)
+        {
+            if (control is IArena)
+            {
+                ((IArena)control).GetPlayers()[0].Block += SendBlockedToLog;
+                ((IArena)control).GetPlayers()[0].Wound += SendWoundToLog;
+                ((IArena)control).GetPlayers()[0].Death += SendDeathToLog;
+                ((IArena)control).GetPlayers()[1].Block += SendBlockedToLog;
+                ((IArena)control).GetPlayers()[1].Wound += SendWoundToLog;
+                ((IArena)control).GetPlayers()[1].Death += SendDeathToLog;
+            }
+        }
         private void SendBlockedToLog(object sender,PlayersEventArgs e)
         {
             View.Log(e.Name + " Blocked " + e.HP);
@@ -95,10 +101,5 @@ namespace FightClub
             View.Log(e.Name + " Death " + e.HP);
         }
         #endregion
-
-        public void SendWindow(Window wind)
-        {
-            View.SendWindow(wind);
-        }
     }
 }

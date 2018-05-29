@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    interface IMainView : IMVCComponent
+    interface IMainView 
     {       
         void Log(string message);
+
         void SetLeftMaxLife(int i);
+
         void SetRightMaxLife(int i);
         void SetLeftLife(int i);
         void SetRightLife(int i);

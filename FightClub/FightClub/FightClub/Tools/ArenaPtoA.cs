@@ -16,14 +16,37 @@ namespace FightClub
         Func<Part,Player,bool> SetPart;
         Action<Part> SetTo;
 
-        public IMainView view { set; private get; }
+        private IMainView View;
+        public IMainView view
+        {
+            set
+            {
+                View = value;
+                View.SetLeftMaxLife(HumanPlayer.HP);
+                View.SetRightMaxLife(AI.HP);
+                View.SetLeftName(HumanPlayer.Name);
+                View.SetRightName(AI.Name);
+            }
+            get
+            {
+                return View;
+            }
+        }
 
         public ArenaPtoA( Player humanPlayer, Player ai, int firstPlayer)
         {
+            
             HumanPlayer = humanPlayer;
             AI = ai;           
 
-            SetPart = SetBlockPart;
+            SetPart = SetBlockPart;  // Select start phase
+            SetStartPlayer(firstPlayer);
+           
+            
+        }
+
+        private void SetStartPlayer(int firstPlayer)
+        {
             if (firstPlayer >= 0 && firstPlayer < 2)
                 if (firstPlayer == 0)
                     SetTo = SetToPlayer;
@@ -31,7 +54,6 @@ namespace FightClub
                     SetTo = SetToAI;
             else
                 throw new Exception("Class: ArenaPtoA\nfirstPlayer must be between 0 and 1");
-            
         }
 
         private void SetToPlayer(Part p)

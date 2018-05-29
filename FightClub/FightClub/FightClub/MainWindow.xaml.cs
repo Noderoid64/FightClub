@@ -20,34 +20,60 @@ namespace FightClub
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        IMainControl Control;
+
         public MainWindow()
         {
             InitializeComponent();
          
-            StartNewGame(new PlayerControl());
+            StartNewGame(new PlayerControl(this));
+            ButtonAIGame.Click += StartGameAI;
+            ButtonPlayerGame.Click += StartGamePlayer;
         }
-
         internal void StartNewGame(IMainControl control)
         {
-
-            SetEvents(control);
-            SendWindow(control);
+            
+            Control = control;
+            SetEvents(Control);
+            
         }
+
         private void SetEvents(IMainControl control)
         {
             ButtonHead.Click += control.HeadClick;
             ButtonBody.Click += control.BodyClick;
             ButtonLegs.Click += control.LegsClick;
-            ButtonExit.Click += control.ExitClick;
-            ButtonAIGame.Click += control.NewGameAI;
-            ButtonPlayerGame.Click += control.NewGamePlayer;
+            ButtonExit.Click += control.ExitClick;           
             ButtonSettings.Click += control.SettingsClick;
             ButtonClear.Click += control.ClearClick;
+
+            ButtonAIGame.Click += control.NewGameAI;
+            ButtonPlayerGame.Click += control.NewGamePlayer;
+            
+            
         }
-        private void SendWindow(IMainControl control)
+        private void DisableEvents(IMainControl control)
         {
-            control.SendWindow(this);
+            ButtonHead.Click -= control.HeadClick;
+            ButtonBody.Click -= control.BodyClick;
+            ButtonLegs.Click -= control.LegsClick;
+            ButtonExit.Click -= control.ExitClick;
+            ButtonSettings.Click -= control.SettingsClick;
+            ButtonClear.Click -= control.ClearClick;
+
+            ButtonAIGame.Click -= control.NewGameAI;
+            ButtonPlayerGame.Click -= control.NewGamePlayer;
+        }
+
+        private void StartGameAI(object sender, EventArgs e)
+        {
+            DisableEvents(Control);
+            StartNewGame(new PlayerControl(new PModelAI(this)));
+        }
+        private void StartGamePlayer(object sender, EventArgs e)
+        {
+            DisableEvents(Control);
+            StartNewGame(new PlayerControl(new PModelP()));
         }
         
     }
