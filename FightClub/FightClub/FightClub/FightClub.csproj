@@ -161,7 +161,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tools\" />
+    <Folder Include="Tools\ComponentsMVC\" />
+    <Folder Include="Windows\MenuWindow\MVC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

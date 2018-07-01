@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FightClub.Windows.MenuWindow" 
+        xmlns:myPath="clr-namespace:FightClub"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800">
-    <Grid>
+        Title="MenuWindow" Height="600" Width="400">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Margin="30" Grid.Row="0"  BorderThickness="20" CornerRadius="10" BorderBrush="White">
+            <Button BorderThickness="0" Background="White">
+                <Image  Width="100" Source="/FightClub;component/Resourse/AIIcon.png"></Image>
+            </Button>
+        </Border>
+        <Border Margin="30" Grid.Row="1"  BorderThickness="20" CornerRadius="10" BorderBrush="White">
+            <Button BorderThickness="0" Background="White">
+                <Image  Width="100" Source="/FightClub;component/Resourse/UserIcon.png"></Image>
+            </Button>
+        </Border>
         
     </Grid>
 </Window>
