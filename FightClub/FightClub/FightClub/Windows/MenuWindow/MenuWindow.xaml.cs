@@ -14,14 +14,15 @@ using System.Windows.Shapes;
 
 namespace FightClub.Windows.MenuWindow
 {
-    /// <summary>
-    /// Interaction logic for MenuWindow.xaml
-    /// </summary>
     public partial class MenuWindow : Window
     {
+        IControlMenu Model;
         public MenuWindow()
         {
+            Model = new ControlDefaultMenu();
+            Model.SendWindow(this);
             InitializeComponent();
         }
+
     }
 }

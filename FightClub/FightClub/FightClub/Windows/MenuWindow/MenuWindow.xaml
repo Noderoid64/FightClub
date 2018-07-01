@@ -13,12 +13,12 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Margin="30" Grid.Row="0"  BorderThickness="20" CornerRadius="10" BorderBrush="White">
-            <Button BorderThickness="0" Background="White">
+            <Button x:Name="ButtonAI" BorderThickness="0" Background="White">
                 <Image  Width="100" Source="/FightClub;component/Resourse/AIIcon.png"></Image>
             </Button>
         </Border>
         <Border Margin="30" Grid.Row="1"  BorderThickness="20" CornerRadius="10" BorderBrush="White">
-            <Button BorderThickness="0" Background="White">
+            <Button x:Name="ButtonPlayer" BorderThickness="0" Background="White">
                 <Image  Width="100" Source="/FightClub;component/Resourse/UserIcon.png"></Image>
             </Button>
         </Border>

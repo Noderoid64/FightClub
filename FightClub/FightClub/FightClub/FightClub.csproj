@@ -62,12 +62,16 @@
     </Compile>
     <Compile Include="Data\Player.cs" />
     <Compile Include="Data\UserPlayer.cs" />
+    <Compile Include="Tools\ComponentsMVC\IMVCElement.cs" />
     <Compile Include="Windows\LogWindow\LogWindow.xaml.cs">
       <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MenuWindow\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MenuWindow\MVC\ControlDefaultMenu.cs" />
+    <Compile Include="Windows\MenuWindow\MVC\IControlMenu.cs" />
+    <Compile Include="Windows\MenuWindow\MVC\IModelMenu.cs" />
     <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
       <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
@@ -160,9 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tools\ComponentsMVC\" />
-    <Folder Include="Windows\MenuWindow\MVC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
