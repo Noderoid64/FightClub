@@ -13,5 +13,14 @@ namespace FightClub
     /// </summary>
     public partial class App : Application
     {
+        
+        
+        public App()
+        {            
+            
+            MainMediator MM = new MainMediator();
+            MenuWindow w = new MenuWindow();
+            w.Show();
+        }
     }
 }

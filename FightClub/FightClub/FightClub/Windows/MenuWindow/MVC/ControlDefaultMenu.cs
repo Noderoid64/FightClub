@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using FightClub.Windows.MenuWindow;
 
 namespace FightClub
 {
@@ -23,7 +22,7 @@ namespace FightClub
             {
                 ((MenuWindow)w).ButtonAI.Click += StartAIGame;
                 ((MenuWindow)w).ButtonPlayer.Click += StartPlayerGame;
-                Model.SendWindow(w);
+               // Model.SendWindow(w);
             }
             else
                 throw new Exception("Window does not inherit MenuWindow");

@@ -12,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FightClub.Windows.MenuWindow
+namespace FightClub
 {
     public partial class MenuWindow : Window
     {
         IControlMenu Model;
         public MenuWindow()
         {
+            
+            InitializeComponent();
             Model = new ControlDefaultMenu();
             Model.SendWindow(this);
-            InitializeComponent();
         }
 
     }

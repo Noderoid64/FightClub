@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    interface IControlMenu : IMVCElement
+    interface IMediator
     {
-        void StartAIGame(object sender, EventArgs ea);
-        void StartPlayerGame(object sender, EventArgs ea);
+        void Send(string Message, string obj);
     }
 }
