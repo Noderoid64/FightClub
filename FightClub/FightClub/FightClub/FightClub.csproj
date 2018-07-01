@@ -56,39 +56,23 @@
     </ApplicationDefinition>
     <Compile Include="Data\IBot.cs" />
     <Compile Include="Data\RandomBot.cs" />
-    <Compile Include="MVC\Control\PlayerControl.cs" />
-    <Compile Include="MVC\Interfaces\IMVCComponent.cs" />
-    <Compile Include="MVC\View\MainView.cs" />
-    <Compile Include="Tools\ArenaPtoA.cs" />
-    <Compile Include="Tools\ArenaPtoP.cs" />
-    <Compile Include="Tools\IArena.cs" />
-    <Compile Include="Tools\Loger.cs" />
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\Player.cs" />
     <Compile Include="Data\UserPlayer.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Windows\LogWindow\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MenuWindow\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
+      <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVC\Interfaces\IMainControl.cs" />
-    <Compile Include="MVC\Interfaces\IMainControlMenu.cs" />
-    <Compile Include="MVC\Interfaces\IMainModel.cs" />
-    <Compile Include="MVC\Interfaces\IMainControlPlayer.cs" />
-    <Compile Include="MVC\Interfaces\IMainModelMenu.cs" />
-    <Compile Include="MVC\Interfaces\IMainModelPlayer.cs" />
-    <Compile Include="MVC\Interfaces\IMainView.cs" />
-    <Compile Include="MVC\Model\ModelMenu.cs" />
-    <Compile Include="MVC\Model\PModelAI.cs" />
-    <Compile Include="MVC\Model\PModelP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -161,6 +145,23 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourse\AttackIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Windows\LogWindow\LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MenuWindow\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PlayerWindow\PlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
