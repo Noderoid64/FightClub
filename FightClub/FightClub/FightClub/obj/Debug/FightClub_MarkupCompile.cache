@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Git\FightClub\FightClub\FightClub\FightClub\App.xaml
-11151548125
+3776804310
 
-261502272866
+112079959487
 131569487696
-MainWindow.xaml;
+Windows\LogWindow\LogWindow.xaml;Windows\MenuWindow\MenuWindow.xaml;Windows\PlayerWindow\PlayerWindow.xaml;
 
 False
 
