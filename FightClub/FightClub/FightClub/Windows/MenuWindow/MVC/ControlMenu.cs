@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace FightClub
 {
-    abstract class ControlMenu : MediatorsElement IMVCElement
+    abstract class ControlMenu : MediatorsElement, IMVCElement
     {
         public ControlMenu(MainMediator m) : base(m)
         {

@@ -16,13 +16,12 @@ namespace FightClub
 {
     public partial class MenuWindow : Window
     {
-        IControlMenu Model;
-        public MenuWindow()
-        {
-            
+        internal ControlMenu Control;
+        internal MenuWindow(MainMediator mm)
+        {            
             InitializeComponent();
-            Model = new ControlDefaultMenu();
-            Model.SendWindow(this);
+            Control = new ControlDefaultMenu(mm);
+            Control.SendWindow(this);
         }
 
     }

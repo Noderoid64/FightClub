@@ -13,7 +13,7 @@ namespace FightClub
         {
 
         }
-       public abstract void HeadHit(object sender, EventArgs e);
+        public abstract void HeadHit(object sender, EventArgs e);
         public abstract void BodyHit(object sender, EventArgs e);
         public abstract void LegsHit(object sender, EventArgs e);
 

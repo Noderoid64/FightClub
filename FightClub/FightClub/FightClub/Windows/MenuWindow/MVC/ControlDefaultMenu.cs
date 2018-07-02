@@ -7,34 +7,34 @@ using System.Windows;
 
 namespace FightClub
 {
-    class ControlDefaultMenu : IControlMenu
+    internal class ControlDefaultMenu : ControlMenu
     {
-        IModelMenu Model;
+        internal IModelMenu Model;
 
-        public ControlDefaultMenu()
+        public ControlDefaultMenu(MainMediator mm) : base(mm)
         {
-           // Model = new 
+            // Model = new 
         }
-        public void SendWindow(Window w)
+        public override void SendWindow(Window w)
         {
 
             if (w.GetType() == typeof(MenuWindow))
             {
                 ((MenuWindow)w).ButtonAI.Click += StartAIGame;
                 ((MenuWindow)w).ButtonPlayer.Click += StartPlayerGame;
-               // Model.SendWindow(w);
+                // Model.SendWindow(w);
             }
             else
                 throw new Exception("Window does not inherit MenuWindow");
-            
+
         }
 
-        public void StartAIGame(object sender, EventArgs ea)
+        public override void StartAIGame(object sender, EventArgs ea)
         {
             throw new NotImplementedException();
         }
 
-        public void StartPlayerGame(object sender, EventArgs ea)
+        public override void StartPlayerGame(object sender, EventArgs ea)
         {
             throw new NotImplementedException();
         }
