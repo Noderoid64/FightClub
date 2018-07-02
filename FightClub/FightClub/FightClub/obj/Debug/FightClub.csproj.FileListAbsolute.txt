@@ -15,4 +15,6 @@ D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Window\LogWindow\LogWin
 D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Window\PlayerWindow\PlayerWindow.g.cs
 D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Window\LogWindow\LogWindow.baml
 D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Window\PlayerWindow\PlayerWindow.baml
-D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Window\ColorDictionary.baml
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\App.baml
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Resourse\Dictionary\ColorDictionary.baml
+D:\Git\FightClub\FightClub\FightClub\FightClub\obj\Debug\Resourse\Dictionary\ImageDictionary.baml

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FightClub"
         mc:Ignorable="d"
-        Title="PlayerWindow" Height="400" Width="400">
+        Title="PlayerWindow" Height="400" Width="400" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="BodyPart" TargetType="Image">
             
@@ -13,7 +13,7 @@
             <Setter Property="Margin" Value="10"></Setter>
         </Style>
     </Window.Resources>
-    <StackPanel Background="{StaticResource darkColor}">
+    <StackPanel Background="{DynamicResource darkColor}">
         <Grid Height="70">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -21,13 +21,13 @@
             </Grid.ColumnDefinitions>
             
             <ProgressBar Foreground="DarkGreen" Value="100" Margin="10" Height="30"></ProgressBar>
-            <TextBlock Foreground="{StaticResource superTextColor}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">100/100</TextBlock>
+            <TextBlock Foreground="{DynamicResource superTextColor}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">100/100</TextBlock>
             <Border Grid.Column="1" CornerRadius="50" Background="White">
-                <Image Margin="15" Source="{StaticResource ComputerImage}"></Image>
+                <Image Margin="15" Source="{DynamicResource ComputerImage}"></Image>
             </Border>
         </Grid>
-        <Image Style="{StaticResource BodyPart}" Source="{StaticResource HeadDefImage}"/>
-        <Image Style="{StaticResource BodyPart}" Source="{StaticResource BodyDefImage}"/>
-        <Image Style="{StaticResource BodyPart}" Source="{StaticResource LegsDefImage}"/>
+        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource HeadDefImage}"/>
+        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource BodyDefImage}"/>
+        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource LegsDefImage}"/>
     </StackPanel>
 </Window>

@@ -58,6 +58,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller\IController.cs" />
+    <Compile Include="Controller\LogController.cs" />
+    <Compile Include="Controller\PlayerController.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerEventArgs.cs" />
     <Compile Include="Window\LogWindow\LogWindow.xaml.cs">
       <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>

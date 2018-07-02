@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FightClub"
         mc:Ignorable="d"
-        Title="LogWindow" Height="200" Width="800">
+        Title="LogWindow" Height="200" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button BorderBrush="{StaticResource fadeColor}" Background="{StaticResource lightColor}" x:Name="ButtonClear" FontSize="18">
-            <Image Source="{StaticResource ClearImage}"></Image>
+        <Button BorderBrush="{DynamicResource fadeColor}" Background="{DynamicResource lightColor}" x:Name="ButtonClear" FontSize="18">
+            <Image Source="{DynamicResource ClearImage}"></Image>
         </Button>
-        <ListBox Foreground="{StaticResource defaultTextColor}" Background="{StaticResource darkColor}" x:Name="ListBoxLog" Grid.Column="1" FontSize="22">
+        <ListBox Foreground="{DynamicResource defaultTextColor}" Background="{DynamicResource darkColor}" x:Name="ListBoxLog" Grid.Column="1" FontSize="22">
             <ListBoxItem>Hello my name is human</ListBoxItem>
         </ListBox>
     </Grid>
