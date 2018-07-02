@@ -20,7 +20,7 @@ namespace FightClub
             
             MainMediator MM = new MainMediator();
             MenuWindow Mw = new MenuWindow(MM);
-            PlayerWindow Pw = new PlayerWindow();
+            PlayerWindow Pw = new PlayerWindow(MM);
             
             Mw.Show();
             Pw.Show();

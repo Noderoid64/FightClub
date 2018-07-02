@@ -19,9 +19,12 @@ namespace FightClub
     /// </summary>
     public partial class PlayerWindow : Window
     {
-        public PlayerWindow()
+        ControlPlayer CP;
+        internal PlayerWindow(MainMediator mm)
         {
             InitializeComponent();
+            CP = new HumanControlPlayer(mm);
+            CP.SendWindow(this);
         }
     }
 }

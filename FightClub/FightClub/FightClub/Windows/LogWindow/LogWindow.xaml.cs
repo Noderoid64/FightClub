@@ -12,16 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FightClub.Windows.LogWindow
+namespace FightClub
 {
     /// <summary>
     /// Interaction logic for LogWindow.xaml
     /// </summary>
     public partial class LogWindow : Window
     {
-        public LogWindow()
+        ControlLog Cl;
+        internal LogWindow(MainMediator mm)
         {
             InitializeComponent();
+            Cl = new DefaultControlLog(mm);
+            Cl.SendWindow(this);
         }
     }
 }

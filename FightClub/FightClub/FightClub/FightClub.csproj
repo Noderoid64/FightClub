@@ -70,6 +70,7 @@
       <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\LogWindow\MVC\ControlLog.cs" />
+    <Compile Include="Windows\LogWindow\MVC\DefaultControlLog.cs" />
     <Compile Include="Windows\MenuWindow\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
@@ -77,6 +78,7 @@
     <Compile Include="Windows\MenuWindow\MVC\ControlMenu.cs" />
     <Compile Include="Windows\MenuWindow\MVC\IModelMenu.cs" />
     <Compile Include="Windows\PlayerWindow\MVC\ControlPlayer.cs" />
+    <Compile Include="Windows\PlayerWindow\MVC\HumanControlPlayer.cs" />
     <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
       <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
