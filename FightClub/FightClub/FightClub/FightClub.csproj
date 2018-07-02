@@ -54,33 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Data\IBot.cs" />
-    <Compile Include="Data\RandomBot.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Data\Player.cs" />
-    <Compile Include="Data\UserPlayer.cs" />
-    <Compile Include="Tools\ComponentsMVC\IMVCElement.cs" />
-    <Compile Include="Tools\Mediator\IMediator.cs" />
-    <Compile Include="Tools\Mediator\MainMediator.cs" />
-    <Compile Include="Tools\Mediator\MediatorsElement.cs" />
-    <Compile Include="Windows\LogWindow\LogWindow.xaml.cs">
-      <DependentUpon>LogWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\LogWindow\MVC\ControlLog.cs" />
-    <Compile Include="Windows\LogWindow\MVC\DefaultControlLog.cs" />
-    <Compile Include="Windows\MenuWindow\MenuWindow.xaml.cs">
-      <DependentUpon>MenuWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\MenuWindow\MVC\ControlDefaultMenu.cs" />
-    <Compile Include="Windows\MenuWindow\MVC\ControlMenu.cs" />
-    <Compile Include="Windows\MenuWindow\MVC\IModelMenu.cs" />
-    <Compile Include="Windows\PlayerWindow\MVC\ControlPlayer.cs" />
-    <Compile Include="Windows\PlayerWindow\MVC\HumanControlPlayer.cs" />
-    <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
-      <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -156,20 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourse\AttackIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Windows\LogWindow\LogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\MenuWindow\MenuWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\PlayerWindow\PlayerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
