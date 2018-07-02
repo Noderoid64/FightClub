@@ -14,8 +14,9 @@ namespace FightClub
     public partial class App : Application
     {
         public App()
-        {            
-            
+        {
+            LogWindow w = new LogWindow();
+            w.Show();
         }
     }
 }

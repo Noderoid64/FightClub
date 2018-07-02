@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FightClub.Resourse.Dictionary">
+    <BitmapImage x:Key="ClearImage" UriSource="/FightClub;component/Resourse/Image/ClearIcon.png"></BitmapImage>
+
+    <BitmapImage x:Key="ComputerImage" UriSource="/FightClub;component/Resourse/Image/AIIcon.png"></BitmapImage>
+    <BitmapImage x:Key="HumanImage" UriSource="/FightClub;component/Resourse/Image/UserIcon.png"></BitmapImage>
+    
+    <BitmapImage x:Key="HeadDefImage" UriSource="/FightClub;component/Resourse/Image/HeadWhite.png"></BitmapImage>
+    <BitmapImage x:Key="BodyDefImage" UriSource="/FightClub;component/Resourse/Image/BodyWhite.png"></BitmapImage>
+    <BitmapImage x:Key="LegsDefImage" UriSource="/FightClub;component/Resourse/Image/LegsWhite.png"></BitmapImage>
+    
+</ResourceDictionary>
