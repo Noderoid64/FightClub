@@ -2,8 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FightClub"
+<<<<<<< HEAD
              StartupUri="Windows\MenuWindow\MenuWindow.xaml">
+=======
+             >
+>>>>>>> dev
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resourse/Dictionary/ColorDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resourse/Dictionary/ImageDictionary.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

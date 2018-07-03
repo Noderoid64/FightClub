@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 D:\Git\FightClub\FightClub\FightClub\FightClub\App.xaml
+<<<<<<< HEAD
 3776804310
 
 151464318866
 131569487696
 Windows\LogWindow\LogWindow.xaml;Windows\MenuWindow\MenuWindow.xaml;Windows\PlayerWindow\PlayerWindow.xaml;
+=======
+41708171456
+
+252122441000
+131569487696
+Resourse\Dictionary\ColorDictionary.xaml;Resourse\Dictionary\ImageDictionary.xaml;Window\LogWindow\LogWindow.xaml;Window\PlayerWindow\PlayerWindow.xaml;
+>>>>>>> dev
 
 True
 

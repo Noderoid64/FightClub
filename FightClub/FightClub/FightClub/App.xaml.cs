@@ -13,5 +13,19 @@ namespace FightClub
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+
+            ControllersAbstraction C = new Controller();
+
+            PlayersView PV = new PlayersView(C);
+            LogView LV = new LogView(C);
+
+            C.AddView(PV);
+            C.AddView(LV);
+            C.StartRound(new HumanComputerCreator());
+
+            
+        }
     }
 }

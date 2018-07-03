@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Compile Include="Data\IBot.cs" />
     <Compile Include="Data\RandomBot.cs" />
     <Compile Include="Windows\LogWindow\LogWindow.xaml.cs">
@@ -65,10 +66,13 @@
     <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
       <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> dev
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Data\Player.cs" />
     <Compile Include="Data\UserPlayer.cs" />
     <Page Include="Windows\LogWindow\LogWindow.xaml">
@@ -83,6 +87,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+=======
+    <Compile Include="Data\Bots\DefaultBot.cs" />
+    <Compile Include="Data\Bots\IBot.cs" />
+    <Compile Include="MVC\Controller.cs" />
+    <Compile Include="MVC\Interfaces\ControllersAbstraction.cs" />
+    <Compile Include="MVC\Interfaces\Observer\IObservable.cs" />
+    <Compile Include="MVC\Interfaces\Observer\IObserver.cs" />
+    <Compile Include="MVC\Model.cs" />
+    <Compile Include="MVC\View\LogView.cs" />
+    <Compile Include="MVC\View\PlayersView.cs" />
+    <Compile Include="Data\Rooms\FightRoomForTwo.cs" />
+    <Compile Include="Data\Players\Player.cs" />
+    <Compile Include="Data\Players\PlayerArgs.cs" />
+    <Compile Include="Data\Rooms\Factory\HumanComputerCreator.cs" />
+    <Compile Include="Data\Rooms\HumanComputerRoom.cs" />
+    <Compile Include="Data\Rooms\Factory\RoomCreator.cs" />
+    <Compile Include="Window\LogWindow\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\PlayerWindow\PlayerWindow.xaml.cs">
+      <DependentUpon>PlayerWindow.xaml</DependentUpon>
+    </Compile>
+>>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -111,52 +138,71 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\NewGameIcon.png" />
-    <Resource Include="Resourse\SettingsIcon.png" />
+    <Resource Include="Resourse\Image\NewGameIcon.png" />
+    <Resource Include="Resourse\Image\SettingsIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\AIIcon.png" />
-    <Resource Include="Resourse\UserIcon.png" />
+    <Resource Include="Resourse\Image\AIIcon.png" />
+    <Resource Include="Resourse\Image\UserIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\ExitIcon.png" />
+    <Resource Include="Resourse\Image\ExitIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\BodyWhite.png" />
-    <Resource Include="Resourse\HeadWhite.png" />
-    <Resource Include="Resourse\LegsWhite.png" />
+    <Resource Include="Resourse\Image\BodyWhite.png" />
+    <Resource Include="Resourse\Image\HeadWhite.png" />
+    <Resource Include="Resourse\Image\LegsWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\BodyBlue.png" />
-    <Resource Include="Resourse\BodyGreen.png" />
-    <Resource Include="Resourse\BodyRed.png" />
-    <Resource Include="Resourse\BodyYellow.png" />
-    <Resource Include="Resourse\HeadBlue.png" />
-    <Resource Include="Resourse\HeadGreen.png" />
-    <Resource Include="Resourse\HeadRed.png" />
-    <Resource Include="Resourse\HeadYellow.png" />
-    <Resource Include="Resourse\LegsBlue.png" />
-    <Resource Include="Resourse\LegsGreen.png" />
-    <Resource Include="Resourse\LegsRed.png" />
+    <Resource Include="Resourse\Image\BodyBlue.png" />
+    <Resource Include="Resourse\Image\BodyGreen.png" />
+    <Resource Include="Resourse\Image\BodyRed.png" />
+    <Resource Include="Resourse\Image\BodyYellow.png" />
+    <Resource Include="Resourse\Image\HeadBlue.png" />
+    <Resource Include="Resourse\Image\HeadGreen.png" />
+    <Resource Include="Resourse\Image\HeadRed.png" />
+    <Resource Include="Resourse\Image\HeadYellow.png" />
+    <Resource Include="Resourse\Image\LegsBlue.png" />
+    <Resource Include="Resourse\Image\LegsGreen.png" />
+    <Resource Include="Resourse\Image\LegsRed.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\LegsYellow.png" />
+    <Resource Include="Resourse\Image\LegsYellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\DropDownIcon.png" />
-    <Resource Include="Resourse\DropUpIcon.png" />
+    <Resource Include="Resourse\Image\DropDownIcon.png" />
+    <Resource Include="Resourse\Image\DropUpIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\ClearIcon.png" />
+    <Resource Include="Resourse\Image\ClearIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\DefenceIcon.png" />
+    <Resource Include="Resourse\Image\DefenceIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\DropLeftIcon.png" />
+    <Resource Include="Resourse\Image\DropLeftIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourse\AttackIcon.png" />
+    <Resource Include="Resourse\Image\AttackIcon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Resourse\Dictionary\ColorDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resourse\Dictionary\ImageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\LogWindow\LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\PlayerWindow\PlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
