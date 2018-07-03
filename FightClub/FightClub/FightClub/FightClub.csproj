@@ -54,40 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
-    <Compile Include="Data\IBot.cs" />
-    <Compile Include="Data\RandomBot.cs" />
-    <Compile Include="Windows\LogWindow\LogWindow.xaml.cs">
-      <DependentUpon>LogWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\MenuWindow\MenuWindow.xaml.cs">
-      <DependentUpon>MenuWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\PlayerWindow\PlayerWindow.xaml.cs">
-      <DependentUpon>PlayerWindow.xaml</DependentUpon>
-    </Compile>
-=======
->>>>>>> dev
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Data\Player.cs" />
-    <Compile Include="Data\UserPlayer.cs" />
-    <Page Include="Windows\LogWindow\LogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\MenuWindow\MenuWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\PlayerWindow\PlayerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-=======
     <Compile Include="Data\Bots\DefaultBot.cs" />
     <Compile Include="Data\Bots\IBot.cs" />
     <Compile Include="MVC\Controller.cs" />
@@ -109,7 +79,6 @@
     <Compile Include="Window\PlayerWindow\PlayerWindow.xaml.cs">
       <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
->>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
