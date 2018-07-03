@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    class LogController
+    interface IBot
     {
-        public void AddMessage(string message)
-        {
-
-        }
-        public void ClearLog()
-        {
-
-        }
+        Player.Part SetBlock();
+        Player.Part SetTarget();
     }
 }

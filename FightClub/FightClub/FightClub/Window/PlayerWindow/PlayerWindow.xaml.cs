@@ -19,7 +19,7 @@ namespace FightClub
     /// </summary>
     public partial class PlayerWindow : Window
     {
-        public PlayerWindow()
+        internal PlayerWindow()
         {
             InitializeComponent();
         }

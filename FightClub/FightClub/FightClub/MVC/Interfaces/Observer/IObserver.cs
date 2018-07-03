@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    interface IController
+    public interface IObserver
     {
+        void update(object info);
     }
 }

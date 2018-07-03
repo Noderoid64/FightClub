@@ -8,7 +8,7 @@
         Title="PlayerWindow" Height="400" Width="400" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="BodyPart" TargetType="Image">
-            
+
             <Setter Property="Height" Value="80"></Setter>
             <Setter Property="Margin" Value="10"></Setter>
         </Style>
@@ -19,15 +19,29 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="70"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
-            <ProgressBar Foreground="DarkGreen" Value="100" Margin="10" Height="30"></ProgressBar>
-            <TextBlock Foreground="{DynamicResource superTextColor}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">100/100</TextBlock>
+            <StackPanel>
+                <TextBlock x:Name="TextBoxName" HorizontalAlignment="Center" FontSize="20" Foreground="{DynamicResource defaultTextColor}">Empty</TextBlock>
+                <Grid>
+                    <ProgressBar x:Name="ProgressBarHp" Foreground="DarkGreen" Value="100" Margin="10" Height="30"></ProgressBar>
+                    <TextBlock x:Name="TextBlockHP" Foreground="{DynamicResource superTextColor}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">0/0</TextBlock>
+                </Grid>
+                
+            </StackPanel>
+
             <Border Grid.Column="1" CornerRadius="50" Background="White">
                 <Image Margin="15" Source="{DynamicResource ComputerImage}"></Image>
             </Border>
         </Grid>
-        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource HeadDefImage}"/>
-        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource BodyDefImage}"/>
-        <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource LegsDefImage}"/>
+        <Button x:Name="HeadButton"  Background="Transparent" BorderThickness="0">
+            <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource HeadDefImage}"/>
+        </Button>
+        <Button x:Name="BodyButton"  Background="Transparent" BorderThickness="0">
+            <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource BodyDefImage}"/>
+        </Button>
+        <Button x:Name="LegsButton"  Background="Transparent" BorderThickness="0">
+            <Image Style="{DynamicResource BodyPart}" Source="{DynamicResource LegsDefImage}"/>
+        </Button>
+        
+        
     </StackPanel>
 </Window>

@@ -58,11 +58,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\IController.cs" />
-    <Compile Include="Controller\LogController.cs" />
-    <Compile Include="Controller\PlayerController.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\PlayerEventArgs.cs" />
+    <Compile Include="Data\Bots\DefaultBot.cs" />
+    <Compile Include="Data\Bots\IBot.cs" />
+    <Compile Include="MVC\Controller.cs" />
+    <Compile Include="MVC\Interfaces\ControllersAbstraction.cs" />
+    <Compile Include="MVC\Interfaces\Observer\IObservable.cs" />
+    <Compile Include="MVC\Interfaces\Observer\IObserver.cs" />
+    <Compile Include="MVC\Model.cs" />
+    <Compile Include="MVC\View\LogView.cs" />
+    <Compile Include="MVC\View\PlayersView.cs" />
+    <Compile Include="Data\Rooms\FightRoomForTwo.cs" />
+    <Compile Include="Data\Players\Player.cs" />
+    <Compile Include="Data\Players\PlayerArgs.cs" />
+    <Compile Include="Data\Rooms\Factory\HumanComputerCreator.cs" />
+    <Compile Include="Data\Rooms\HumanComputerRoom.cs" />
+    <Compile Include="Data\Rooms\Factory\RoomCreator.cs" />
     <Compile Include="Window\LogWindow\LogWindow.xaml.cs">
       <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>

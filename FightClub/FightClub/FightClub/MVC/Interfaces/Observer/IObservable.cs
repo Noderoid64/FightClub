@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FightClub
 {
-    class PlayerController
+    interface IObservable
     {
-        public void GetHit()
-        {
-
-        }
+        void AddObserver(IObserver obj);
+        void RemoveObserver(IObserver obj);
+        void Notify(object info);
     }
 }

@@ -15,12 +15,17 @@ namespace FightClub
     {
         public App()
         {
-            LogWindow w = new LogWindow();
-            PlayerWindow pw1 = new PlayerWindow();
-            PlayerWindow pw2 = new PlayerWindow();
-            pw1.Show();
-            pw2.Show();
-            w.Show();
+
+            ControllersAbstraction C = new Controller();
+
+            PlayersView PV = new PlayersView(C);
+            LogView LV = new LogView(C);
+
+            C.AddView(PV);
+            C.AddView(LV);
+            C.StartRound(new HumanComputerCreator());
+
+            
         }
     }
 }
